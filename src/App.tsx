@@ -1,4 +1,5 @@
-import { AddItem } from "./assets/components/AddItem/AddItem";
+import { AddItem } from "./components/AddItem/AddItem";
+
 
 function App() {
   return (
