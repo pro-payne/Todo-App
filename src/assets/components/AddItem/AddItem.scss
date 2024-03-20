@@ -1,0 +1,27 @@
+.add-item {
+    width: 100%;
+    margin-bottom: 1rem;
+
+    .add-input {
+        outline: none;
+        background: none;
+        border: 1px solid #078cf1;
+        padding: 0.5rem 1rem;
+        margin-top: 1rem;
+        margin-bottom: 2rem;
+        width: 300px;
+        color: #212020;
+    }
+
+    .addItem-input::placeholder {
+        color: #ffffff4d;
+    }
+
+    .add-btn {
+        background: #078cf1;
+        color: #fff;
+        border: none;
+        padding: 0.55rem;
+        cursor: pointer;
+    }
+}
