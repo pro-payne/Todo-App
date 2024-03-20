@@ -1,12 +1,15 @@
 import { Provider } from "react-redux";
 import TodoList from "./components/TodoList/TodoList";
-import store from "./store/store";
+import store, { persistor } from "./store/store";
+import { PersistGate } from "redux-persist/integration/react";
 
 function App() {
   return (
     <>
       <Provider store={store}>
-        <TodoList />
+        <PersistGate loading={null} persistor={persistor}>
+          <TodoList />
+        </PersistGate>
       </Provider>
     </>
   );
