@@ -1,0 +1,33 @@
+.app-wrapper {
+    background: #078cf1;
+    padding-top: 5rem;
+    padding-bottom: 2rem;
+    height: 100%;
+
+    @media (max-width: 503px) {
+        padding-top: 0;
+    }
+
+    h1 {
+        color: #fff;
+        margin-bottom: 10px;
+        font-size: 28px
+    }
+
+    .todoList-wrapper {
+        position: relative;
+        max-width: 435px;
+        background: #1f1f4e;
+        padding: 2rem;
+        border-radius: 5px;
+        width: 100%;
+
+        margin: 0 auto;
+
+
+        @media (max-width: 503px) {
+            height: 100%;
+        }
+    }
+
+}

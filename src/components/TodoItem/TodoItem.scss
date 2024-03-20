@@ -1,0 +1,21 @@
+.item-wrapper {
+    background: #078cf1;
+    margin-top: 17px;
+    padding: 10px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .item-name {
+        color: #fff;
+    }
+
+    .icon-btns {
+        color: #fff;
+    }
+
+    // .fa-trash {
+    //     margin-left: 0.75rem;
+    //   }
+}
