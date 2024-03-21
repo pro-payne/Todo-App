@@ -1,0 +1,15 @@
+.edit-item {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 1rem;
+
+    .add-input {
+        outline: none;
+        background: none;
+        border: 1px solid #078cf1;
+        padding: 0.7rem 1rem;
+        color: #fff;
+        width: 100%;
+    }
+}

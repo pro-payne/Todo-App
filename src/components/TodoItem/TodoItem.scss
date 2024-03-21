@@ -13,9 +13,22 @@
 
     .icon-btns {
         color: #fff;
-    }
 
-    // .fa-trash {
-    //     margin-left: 0.75rem;
-    //   }
+
+        .fa-edit {
+            cursor: pointer;
+
+        }
+
+        .fa-trash {
+            margin-left: 0.75rem;
+            cursor: pointer;
+        }
+
+        .fa-check {
+            margin-left: 0.75rem;
+            cursor: pointer;
+
+        }
+    }
 }

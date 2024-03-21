@@ -1,8 +1,14 @@
 import React from 'react'
 
-const DeleteItem = () => {
+interface DeleteItemProps {
+  onDelete: () => void;
+}
+
+const DeleteItem = ({onDelete}: DeleteItemProps) => {
   return (
-    <div>DeleteItem</div>
+    <button onClick={onDelete}>
+    Delete
+  </button>
   )
 }
 
