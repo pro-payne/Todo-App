@@ -19,7 +19,6 @@ const EditItem = ({ initialText, onSave, onCancel }: EditItemProps) => {
   };
 
   const handleCancel = () => {
-    console.log("I am clicked");
     onCancel();
   };
 
