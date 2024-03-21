@@ -9,6 +9,15 @@
 
     .item-name {
         color: #fff;
+
+
+        &.completed {
+            p {
+
+                text-decoration: line-through;
+
+            }
+        }
     }
 
     .icon-btns {
@@ -31,4 +40,5 @@
 
         }
     }
+
 }

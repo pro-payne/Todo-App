@@ -7,6 +7,8 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import "./TodoItem.scss";
 import EditItem from "../EditItem/EditItem";
+import { useDispatch } from "react-redux";
+import { toggleComplete } from "../../store/todoSlice";
 
 interface Todo {
   id: number;
@@ -21,6 +23,7 @@ interface TodoItemProps {
 }
 const TodoItem = ({ todo, editTodo, deleteTodo }: TodoItemProps) => {
   const [isEditing, setIsEditing] = useState(false);
+  const dispatch = useDispatch();
   console.log("todo: ", todo);
 
   const handleEdit = () => {
@@ -36,9 +39,13 @@ const TodoItem = ({ todo, editTodo, deleteTodo }: TodoItemProps) => {
     setIsEditing(false);
   };
 
+  const handleComplete = () => {
+    dispatch(toggleComplete(todo.id));
+  };
+
   return (
     <>
-      <div className="item-wrapper">
+      <div className={isEditing ? "" : "item-wrapper"}>
         {isEditing ? (
           <EditItem
             id={todo.id}
@@ -48,17 +55,25 @@ const TodoItem = ({ todo, editTodo, deleteTodo }: TodoItemProps) => {
           />
         ) : (
           <>
-            <div className="item-name">
+            <div className={`item-name ${todo.completed ? "completed" : ""}`}>
               <p>{todo.text}</p>
             </div>
             <div className="icon-btns">
-              <FontAwesomeIcon icon={faPenToSquare} onClick={handleEdit} className="fa-edit"/>
+              <FontAwesomeIcon
+                icon={faPenToSquare}
+                onClick={handleEdit}
+                className="fa-edit"
+              />
               <FontAwesomeIcon
                 icon={faTrash}
                 className="fa-trash"
                 onClick={() => deleteTodo(todo.id)}
               />
-              <FontAwesomeIcon icon={faCheckCircle} className="fa-check" />
+              <FontAwesomeIcon
+                icon={faCheckCircle}
+                onClick={handleComplete}
+                className={`fa-check ${todo.completed ? "completed" : ""}`}
+              />
             </div>
           </>
         )}

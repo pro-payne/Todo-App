@@ -4,12 +4,26 @@
     width: 100%;
     margin-bottom: 1rem;
 
-    .add-input {
+    .edit-input {
         outline: none;
         background: none;
         border: 1px solid #078cf1;
-        padding: 0.7rem 1rem;
+        padding: 0.57rem 1rem;
         color: #fff;
         width: 100%;
+    }
+
+    .edit-btn {
+        background: #078cf1;
+        color: #fff;
+        border: none;
+        padding: 0.55rem;
+        height: 40px;
+        width: 110px;
+        cursor: pointer;
+
+        &.save-btn{
+            border-right: 1px solid #1f1f4e;
+        }
     }
 }

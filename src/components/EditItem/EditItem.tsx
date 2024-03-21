@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "./EditItem.scss";
 
 interface EditItemProps {
   id: number;
@@ -28,12 +29,12 @@ const EditItem = ({ initialText, onSave, onCancel }: EditItemProps) => {
         type="text"
         value={text}
         onChange={handleTextChange}
-        className="add-input"
+        className="edit-input"
       />
-      <button onClick={handleSave} className="add-btn">
+      <button onClick={handleSave} className="edit-btn save-btn">
         Save
       </button>
-      <button onClick={handleCancel} className="add-btn">
+      <button onClick={handleCancel} className="edit-btn">
         Cancel
       </button>
     </div>

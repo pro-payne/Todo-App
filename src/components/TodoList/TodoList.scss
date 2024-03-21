@@ -1,8 +1,9 @@
 .app-wrapper {
-    background: #078cf1;
+    background: #dfecf5;
     padding-top: 5rem;
     padding-bottom: 2rem;
     height: 100%;
+    align-items: center;
 
     @media (max-width: 503px) {
         padding-top: 0;
@@ -17,16 +18,16 @@
     .todoList-wrapper {
         position: relative;
         max-width: 435px;
-        background: #1f1f4e;
+        background: #23467e;
         padding: 2rem;
         border-radius: 5px;
         width: 100%;
-
         margin: 0 auto;
 
 
         @media (max-width: 503px) {
             height: 100%;
+            border-radius: unset;
         }
     }
 
