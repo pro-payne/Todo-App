@@ -1,16 +1,15 @@
-import React from "react";
 import AddItem from "../AddItem/AddItem";
-// import { AddItem } from '../AddItem/AddItem'
 import "./TodoList.scss";
 import TodoItem from "../TodoItem/TodoItem";
-import { useSelector, useDispatch } from "react-redux";
 import { editTodo, deleteTodo } from "../../store/todoSlice";
+import { useAppDispatch, useAppSelector } from "../../store/hook";
 
 const TodoList = () => {
   // getting todos from redux state
-  const todos = useSelector((state: any) => state.todos);
+  const todos = useAppSelector((state) => state.todos);
 
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
+
   const editTodoFunction = (id: number, newText: string) => {
     // Dispatch the editTodo action with the id and newText payload
     dispatch(editTodo({ id, newText }));
@@ -19,13 +18,14 @@ const TodoList = () => {
   const deleteTodoFunction = (id: number) => {
     dispatch(deleteTodo(id));
   };
+
   return (
-    <>
-      <div className="app-wrapper">
-        <div className="todoList-wrapper">
-          <h1>Todo List</h1>
-          <AddItem />
-          {todos.map((todo: any) => (
+    <div className="app-wrapper">
+      <div className="todoList-wrapper">
+        <h1>Todo List</h1>
+        <AddItem />
+        <div>
+          {todos.map((todo) => (
             <TodoItem
               key={todo.id}
               todo={todo}
@@ -35,7 +35,7 @@ const TodoList = () => {
           ))}
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

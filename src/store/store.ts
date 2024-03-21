@@ -13,9 +13,6 @@ import storage from "redux-persist/lib/storage";
 import todoReducer from "./todoSlice";
 import { combineReducers } from "redux";
 
-// RootState type
-export type RootState = ReturnType<typeof rootReducer>;
-
 const persistConfig = {
   key: "root",
   storage,
@@ -41,5 +38,8 @@ const store = configureStore({
 
 // Creating persistor
 export const persistor = persistStore(store);
+
+export type RootState = ReturnType<typeof store.getState>;
+export type AppDispatch = typeof store.dispatch;
 
 export default store;

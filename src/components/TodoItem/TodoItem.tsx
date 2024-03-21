@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faCheckCircle,
@@ -7,24 +7,19 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import "./TodoItem.scss";
 import EditItem from "../EditItem/EditItem";
-import { useDispatch } from "react-redux";
-import { toggleComplete } from "../../store/todoSlice";
-
-interface Todo {
-  id: number;
-  text: string;
-  completed: boolean;
-}
+import { Todo, toggleComplete } from "../../store/todoSlice";
+import { useAppDispatch } from "../../store/hook";
 
 interface TodoItemProps {
   todo: Todo;
   editTodo: (id: number, newText: string) => void;
   deleteTodo: (id: number) => void;
 }
+
 const TodoItem = ({ todo, editTodo, deleteTodo }: TodoItemProps) => {
   const [isEditing, setIsEditing] = useState(false);
-  const dispatch = useDispatch();
-  console.log("todo: ", todo);
+
+  const dispatch = useAppDispatch();
 
   const handleEdit = () => {
     setIsEditing(true);

@@ -2,19 +2,21 @@
     display: flex;
     align-items: center;
     width: 100%;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
+    position: relative;
 
     .add-input {
         outline: none;
         background: none;
         border: 1px solid #078cf1;
+        background-color: rgb(125 192 243 / 20%);
         padding: 0.57rem 1rem;
         color: #fff;
         width: 100%;
-    }
 
-    .addItem-input::placeholder {
-        color: #ffffff4d;
+        &::placeholder {
+            color: #dbdbdb;
+        }
     }
 
     .add-btn {
@@ -25,5 +27,13 @@
         height: 40px;
         width: 110px;
         cursor: pointer;
+    }
+
+    .error-message {
+        position: absolute;
+        bottom: -20px; 
+        left: 0;
+        color: red;
+        font-size: 0.8rem;
     }
 }
